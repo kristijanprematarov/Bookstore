@@ -36,6 +36,14 @@ namespace Bookstore.Controllers
 
         public IActionResult Edit()
         {
+            List<SelectListItem> Categories = new List<SelectListItem>()
+            {
+                new SelectListItem()  {Text="Romance",Value = "1"},
+                new SelectListItem()  {Text="Drama",Value = "2"},
+                new SelectListItem()  {Text="Adventure",Value = "3"}
+            };
+
+            ViewBag.CategoryList = Categories;
             return View();
         }
 
