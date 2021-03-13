@@ -42,6 +42,13 @@ namespace Bookstore.Repository
             _dataContext.SaveChanges();
         }
 
+        public void EditBook(int id)
+        {
+            var book = GetBookById(id);
+            _dataContext.Books.Update(book);
+            _dataContext.SaveChanges();
+        }
+
         public IEnumerable<Book> GetAllBooks()
         {
             var allBooks = _dataContext.Books.AsEnumerable();

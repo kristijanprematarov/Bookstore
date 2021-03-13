@@ -22,7 +22,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label asp-for="AuthorID">AuthorID</label>
-                <select asp-for="AuthorID" class="form-control" asp-items="ViewBag.AuthorID"></select>
+                <select asp-for="AuthorID" class="form-control" asp-items="ViewBag.AuthorList"></select>
             </div>
         </div>
 
@@ -44,7 +44,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label asp-for="PublisherID">PublisherID</label>
-                <select asp-for="PublisherID" class="form-control" asp-items="ViewBag.PublisherID"></select>
+                <select asp-for="PublisherID" class="form-control" asp-items="ViewBag.PublisherList"></select>
             </div>
         </div>
 
@@ -61,15 +61,15 @@
 
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label asp-for="Category">Category</label>
-                <input asp-for="Category" class="form-control">
+                <label asp-for="CategoryName">Category</label>
+                <input asp-for="CategoryName" class="form-control">
             </div>
             <div class="form-group col-md-6">
                 <label asp-for="CategoryID">CategoryID</label>
-                @*<select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryList"></select>*@
+                <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryList"></select>
 
-                @Html.DropDownListFor(x => x.CategoryID, new SelectList(ViewBag.CategoryList, "Value", "Text"),
-                    htmlAttributes: new { @class = "form-control", id = "CategoryID" })
+                @*@Html.DropDownListFor(x => x.CategoryID, new SelectList(ViewBag.CategoryList, "Value", "Text"),
+                    htmlAttributes: new { @class = "form-control", id = "CategoryID" })*@
 
             </div>
         </div>

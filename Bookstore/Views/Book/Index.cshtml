@@ -1,22 +1,75 @@
 ﻿
-@{
-}
+@model IEnumerable<Bookstore.Entities.Book>
 
 <h1>Books</h1>
 
-<div class="mt-4">
-    <a class="btn-success btn" asp-controller="Book" asp-action="Create">Create</a>
+<div class="row mt-4">
+    <div class="col-12 col-md-12">
+        <a class="btn-success btn float-right" asp-controller="Book" asp-action="Create">
+            <i class="fas fa-plus-circle"></i>
+            &nbsp; &nbsp;
+            Create
+        </a>
+    </div>
 </div>
 
-<div class="mt-4">
-    <a class="btn-primary btn" asp-controller="Book" asp-action="Edit">Edit</a>
-</div>
+<div class="container mt-4">
+    <h3>All books</h3>
 
-<div class="mt-4">
-    <a class="btn-info btn" asp-controller="Book" asp-action="Details">Details</a>
-</div>
+    <table class="table table-bordered">
 
-<div class="mt-4">
-    <a class="btn-danger btn" asp-controller="Book" asp-action="Delete">Delete</a>
+        <thead class="thead-dark">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year of Issue</th>
+                <th>Publisher</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => book.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => book.AuthorName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => book.YearOfIssue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => book.PublisherName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => book.CategoryName)
+                    </td>
+                    <td>
+                        <a class="btn-secondary btn btn-block" asp-controller="Book" asp-action="Edit" asp-route-id="@book.Id">
+                            <i class="fas fa-edit"></i>
+                            &nbsp; &nbsp;
+                            Edit
+                        </a>
+                        <a class="btn-info btn btn-block" asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">
+                            <i class="fas fa-info"></i>
+                            &nbsp; &nbsp;
+                            Details
+                        </a>
+                        <a class="btn-danger btn btn-block" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id">
+                            <i class="fas fa-trash"></i>
+                            &nbsp; &nbsp;
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
 </div>
 

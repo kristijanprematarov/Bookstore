@@ -11,6 +11,8 @@ namespace Bookstore.Repository.Interfaces
         
         void EditBook(Book book);
 
+        void EditBook(int id);
+
         void DeleteBook(int id);
 
         Book GetBookById(int id);

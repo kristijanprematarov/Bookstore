@@ -31,6 +31,12 @@ namespace Bookstore.Service
             _bookRepository.EditBook(book);
         }
 
+        public void Edit(int id)
+        {
+            var book = _bookRepository.GetBookById(id);
+            _bookRepository.EditBook(book);
+        }
+
         public IEnumerable<Book> GetAllBooks()
         {
             var result = _bookRepository.GetAllBooks();

@@ -219,3 +219,4 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Delete.cshtml.g.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Details.cshtml.g.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Book\Edit.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\libman.json
