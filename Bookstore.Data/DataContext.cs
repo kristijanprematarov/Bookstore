@@ -10,7 +10,7 @@ namespace Bookstore.Data
 {
     public class DataContext : IdentityDbContext<IdentityUser>
     {
-        public DataContext(DbContextOptions options) : base(options){}
+        public DataContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
@@ -35,7 +35,7 @@ namespace Bookstore.Data
 
 
     //so ova metodce pri samoto pustanje na app ke se izvrsi ova metodce
-    
+
     //ova ke ni bide mn potrebno za kreiranje na tabelite
 
 

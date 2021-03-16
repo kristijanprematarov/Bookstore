@@ -1,4 +1,5 @@
 ﻿using Bookstore.Entities;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,5 +19,8 @@ namespace Bookstore.Service.Interfaces
         Book GetBookById(int id);
 
         IEnumerable<Book> GetAllBooks();
+
+        (List<SelectListItem> Categories, List<SelectListItem> Authors, List<SelectListItem> Publishers) FillDropdowns();
+
     }
 }

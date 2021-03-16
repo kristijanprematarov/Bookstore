@@ -12,10 +12,20 @@ namespace Bookstore.Controllers
     public class BookController : Controller
     {
         private readonly IBookService _bookService;
+        private readonly IAuthorService _authorService;
+        private readonly ICategoryService _categoryService;
+        private readonly IPublisherService _publisherService;
 
-        public BookController(IBookService bookService)
+        public BookController(
+            IBookService bookService,
+            IAuthorService authorService,
+            ICategoryService categoryService,
+            IPublisherService publisherService)
         {
             this._bookService = bookService;
+            this._authorService = authorService;
+            this._categoryService = categoryService;
+            this._publisherService = publisherService;
         }
         public IActionResult Index()
         {
@@ -28,31 +38,15 @@ namespace Bookstore.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            List<SelectListItem> Categories = new List<SelectListItem>()
-            {
-                new SelectListItem()  {Text="Romance",Value = "1", Selected = true},
-                new SelectListItem()  {Text="Drama",Value = "2"},
-                new SelectListItem()  {Text="Adventure",Value = "3"}
-            };
+            var dropdowns = _bookService.FillDropdowns();
 
-            List<SelectListItem> Authors = new List<SelectListItem>()
-            {
-                new SelectListItem() {Text="Agatha Christie",Value="1", Selected = true},
-                new SelectListItem() {Text="Stephen King",Value="2"},
-                new SelectListItem() {Text="William Shakespeare",Value="3"}
-            };
+            var categories = _categoryService.GetAllCategories();
+            var authors = _authorService.GetAllAuthors();
+            var publishers = _publisherService.GetAllPublishers();
 
-            List<SelectListItem> Publishers = new List<SelectListItem>()
-            {
-                new SelectListItem() {Text="William Morrow Paperbacks",Value="1", Selected = true},
-                new SelectListItem() {Text="Scholastic",Value="2"},
-                new SelectListItem() {Text="Penguin Random House",Value="3"}
-            };
-
-
-            ViewBag.CategoryList = Categories;
-            ViewBag.AuthorList = Authors;
-            ViewBag.PublisherList = Publishers;
+            ViewBag.CategoryList = dropdowns.Categories;
+            ViewBag.AuthorList = dropdowns.Authors;
+            ViewBag.PublisherList = dropdowns.Publishers;
 
             return View();
         }
@@ -72,33 +66,18 @@ namespace Bookstore.Controllers
 
         public IActionResult Edit(int id)
         {
-            List<SelectListItem> Categories = new List<SelectListItem>()
-            {
-                new SelectListItem()  {Text="Romance",Value = "1", Selected = true},
-                new SelectListItem()  {Text="Drama",Value = "2"},
-                new SelectListItem()  {Text="Adventure",Value = "3"}
-            };
+            var dropdowns = _bookService.FillDropdowns();
 
-            List<SelectListItem> Authors = new List<SelectListItem>()
-            {
-                new SelectListItem() {Text="Agatha Christie",Value="1", Selected = true},
-                new SelectListItem() {Text="Stephen King",Value="2"},
-                new SelectListItem() {Text="William Shakespeare",Value="3"}
-            };
+            var categories = _categoryService.GetAllCategories();
+            var authors = _authorService.GetAllAuthors();
+            var publishers = _publisherService.GetAllPublishers();
 
-            List<SelectListItem> Publishers = new List<SelectListItem>()
-            {
-                new SelectListItem() {Text="William Morrow Paperbacks",Value="1", Selected = true},
-                new SelectListItem() {Text="Scholastic",Value="2"},
-                new SelectListItem() {Text="Penguin Random House",Value="3"}
-            };
-
-            ViewBag.CategoryList = Categories;
-            ViewBag.AuthorList = Authors;
-            ViewBag.PublisherList = Publishers;
+            ViewBag.CategoryList = dropdowns.Categories;
+            ViewBag.AuthorList = dropdowns.Authors;
+            ViewBag.PublisherList = dropdowns.Publishers;
 
             var book = _bookService.GetBookById(id);
-            
+
             return View(book);
         }
 
