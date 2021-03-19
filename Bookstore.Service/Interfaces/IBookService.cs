@@ -15,12 +15,15 @@ namespace Bookstore.Service.Interfaces
         void Edit(int id);
 
         void Delete(int id);
+        void Delete(Book cook);
 
         Book GetBookById(int id);
 
         IEnumerable<Book> GetAllBooks();
 
-        (List<SelectListItem> Categories, List<SelectListItem> Authors, List<SelectListItem> Publishers) FillDropdowns();
+        (List<SelectListItem> Categories, List<SelectListItem> Authors, List<SelectListItem> Publishers) FillDropdowns(IEnumerable<Category> categories,
+            IEnumerable<Author> authors,
+            IEnumerable<Publisher> publishers);
 
     }
 }

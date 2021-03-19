@@ -17,7 +17,7 @@ namespace Bookstore.Entities
         [Display(Name = "Author")]
         public string AuthorName { get; set; }
 
-        [Display(Name = "Author ID")]
+        [Display(Name = "Author")]
 
         public int AuthorID { get; set; }
         public Author Author { get; set; }
@@ -45,7 +45,7 @@ namespace Bookstore.Entities
         [StringLength(150)]
         public string Genre { get; set; }
 
-        [Display(Name = "Category ID")]
+        [Display(Name = "Category")]
 
         public int CategoryID { get; set; }
         public Category Category { get; set; }

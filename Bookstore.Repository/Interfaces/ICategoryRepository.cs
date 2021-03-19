@@ -12,6 +12,7 @@ namespace Bookstore.Repository.Interfaces
         void EditCategory(Category category);
 
         void DeleteCategory(int id);
+        void DeleteCategory(Category category);
 
         Category GetCategoryById(int id);
 

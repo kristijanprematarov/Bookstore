@@ -30,6 +30,12 @@ namespace Bookstore.Repository
             _dataContext.SaveChanges();
         }
 
+        public void DeleteCategory(Category category)
+        {
+            _dataContext.Categories.Remove(category);
+            _dataContext.SaveChanges();
+        }
+
         public void EditCategory(Category category)
         {
             _dataContext.Categories.Update(category);

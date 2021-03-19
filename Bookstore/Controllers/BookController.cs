@@ -38,11 +38,11 @@ namespace Bookstore.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            var dropdowns = _bookService.FillDropdowns();
-
             var categories = _categoryService.GetAllCategories();
             var authors = _authorService.GetAllAuthors();
             var publishers = _publisherService.GetAllPublishers();
+
+            var dropdowns = _bookService.FillDropdowns(categories, authors, publishers);
 
             ViewBag.CategoryList = dropdowns.Categories;
             ViewBag.AuthorList = dropdowns.Authors;
@@ -66,17 +66,17 @@ namespace Bookstore.Controllers
 
         public IActionResult Edit(int id)
         {
-            var dropdowns = _bookService.FillDropdowns();
+            var book = _bookService.GetBookById(id);
 
             var categories = _categoryService.GetAllCategories();
             var authors = _authorService.GetAllAuthors();
             var publishers = _publisherService.GetAllPublishers();
 
+            var dropdowns = _bookService.FillDropdowns(categories, authors, publishers);
+
             ViewBag.CategoryList = dropdowns.Categories;
             ViewBag.AuthorList = dropdowns.Authors;
             ViewBag.PublisherList = dropdowns.Publishers;
-
-            var book = _bookService.GetBookById(id);
 
             return View(book);
         }

@@ -26,6 +26,11 @@ namespace Bookstore.Service
             _categoryRepository.DeleteCategory(id);
         }
 
+        public void Delete(Category category)
+        {
+            _categoryRepository.DeleteCategory(category);
+        }
+
         public void Edit(Category category)
         {
             _categoryRepository.EditCategory(category);

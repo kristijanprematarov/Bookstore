@@ -29,7 +29,7 @@ namespace Bookstore.Repository
             _dataContext.Books.Remove(book);
             _dataContext.SaveChanges();
         }
-        
+
         public void DeleteBook(Book book)
         {
             _dataContext.Books.Remove(book);
