@@ -43,8 +43,6 @@ namespace Bookstore.Service
             _bookRepository.EditBook(book);
         }
 
-
-
         public IEnumerable<Book> GetAllBooks()
         {
             var result = _bookRepository.GetAllBooks();
@@ -57,6 +55,8 @@ namespace Bookstore.Service
             return result;
         }
 
+        // ******************* HELPER FUNCTIONS *******************
+
         #region Helper Functions
 
         public (List<SelectListItem> Categories, List<SelectListItem> Authors, List<SelectListItem> Publishers) FillDropdowns(
@@ -66,17 +66,17 @@ namespace Bookstore.Service
         {
             List<SelectListItem> Categories = new List<SelectListItem>()
             {
-                new SelectListItem { Value = "0",Text = "Select Category...", Selected = true }
+                new SelectListItem { Value = "0",Text = "Select Category...", Selected = true, Disabled=true }
             };
 
             List<SelectListItem> Authors = new List<SelectListItem>()
             {
-                new SelectListItem { Value = "0",Text = "Select Author...", Selected = true }
+                new SelectListItem { Value = "0",Text = "Select Author...", Selected = true, Disabled=true }
             };
 
             List<SelectListItem> Publishers = new List<SelectListItem>()
             {
-                new SelectListItem { Value = "0",Text = "Select Publisher...", Selected = true }
+                new SelectListItem { Value = "0",Text = "Select Publisher...", Selected = true, Disabled=true }
             };
 
             foreach (var category in categories)
