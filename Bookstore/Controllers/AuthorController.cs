@@ -18,7 +18,8 @@ namespace Bookstore.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var authors = _authorService.GetAllAuthors();
+            return View(authors);
         }
 
         [HttpPost]

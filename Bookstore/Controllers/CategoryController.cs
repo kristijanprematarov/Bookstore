@@ -1,4 +1,5 @@
-﻿using Bookstore.Service.Interfaces;
+﻿using Bookstore.Entities;
+using Bookstore.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,19 @@ namespace Bookstore.Controllers
         {
             this._categoryService = categoryService;
         }
+
         public IActionResult Index()
         {
-            return View();
+            var categories = _categoryService.GetAllCategories();
+            return View(categories);
+        }
+
+        [HttpPost]
+
+        public JsonResult CreateCategoryAJAX(Category category)
+        {
+            _categoryService.Add(category);
+            return Json(category);
         }
     }
 }

@@ -89,6 +89,7 @@ namespace Bookstore.Controllers
                 book.NumberOfPages = model.NumberOfPages;
                 book.PhotoURL = model.PhotoURL;
                 book.Price = model.Price;
+                book.PublisherID = model.PublisherID;
                 book.PublisherName = model.PublisherName;
                 book.Rating = model.Rating;
                 book.Shipping = model.Shipping;
@@ -152,6 +153,12 @@ namespace Bookstore.Controllers
             _bookService.Delete(book.Id);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public JsonResult GetAllBooksAJAX()
+        {
+            var allBooks = _bookService.GetAllBooks();
+            return Json(new { booksData = allBooks });
         }
 
 

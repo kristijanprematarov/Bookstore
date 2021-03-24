@@ -3,7 +3,7 @@
 $(document).ready(function () {
     console.log('Document is ready!!!');
 
-    //CREATE JQ KRIS
+    //CREATE JQuery KRIS
     $("#AuthorID option").first().attr("hidden", "true");
 
     $("#PublisherID option").first().attr("hidden", "true");
@@ -96,7 +96,7 @@ $("#addNewAuthor").click(function () {
         DateBirth: $("#AuthorDateBirthDTO").val(),
         ShortDescription: $("#AuthorShortDescriptionDTO").val(),
         Language: $("#AuthorLanguageDTO").val(),
-        Gender: $("#AuthorGenderDTO").val(),
+        Gender: $("#AuthorGenderDTO").val()
     };
 
     $.ajax({
@@ -106,10 +106,13 @@ $("#addNewAuthor").click(function () {
         dataType: "json",
         success: function (data) {
             console.log(data);
-            //AUTHOR ID ... na selectot zalepi mu go kreiraniot avtor kako nova option
+            //AuthorID ... na selectot zalepi mu go kreiraniot Author kako nova option
             //<option value="value">text</option>
             $("#AuthorID").append(`<option value="${data.id}">` + data.name + "</option>")
-        },  
+        },
+        error: function () {
+            alert("Error adding new Author!");
+        }
     });
 
     
@@ -118,11 +121,57 @@ $("#addNewAuthor").click(function () {
 $("#addNewPublisher").click(function () {
     console.log("modal button publisher add new publisher");
 
+    //Note: propertinjata so gi polnime mora da se istite od Entitetskata klasa !!!
+    var data =
+    {
+        Name: $("#PublisherNameDTO").val(),
+        Country: $("#PublisherCountryDTO").val(),
+        Year: $("#PublisherYearDTO").val()
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/Publisher/CreatePublisherAJAX",
+        data: data,
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            //PublisherID ... na selectot zalepi mu go kreiraniot Publisher kako nova option
+            //<option value="value">text</option>
+            $("#PublisherID").append(`<option value="${data.id}">` + data.name + "</option>")
+        },
+        error: function () {
+            alert("Error adding new Publisher!");
+        }
+    });
+
 
 });
 
 $("#addNewCategory").click(function () {
     console.log("modal button category add new category");
+
+    //Note: propertinjata so gi polnime mora da se istite od Entitetskata klasa !!!
+    var data =
+    {
+        Name: $("#CategoryNameDTO").val()
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/Category/CreateCategoryAJAX",
+        data: data,
+        dataType: "json",
+        success: function (data) {
+            console.log(data);
+            //CategoryID ... na selectot zalepi mu ja kreiranata kategorija kako nova option
+            //<option value="value">text</option>
+            $("#CategoryID").append(`<option value="${data.id}">` + data.name + "</option>")
+        },
+        error: function () {
+            alert("Error adding new Category!");
+        }
+    });
 
 });
 

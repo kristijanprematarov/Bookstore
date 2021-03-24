@@ -18,7 +18,7 @@
                 @*<label asp-for="AuthorName"></label>*@
                 <label asp-for="AuthorID"></label>
                 <select asp-for="AuthorID" class="form-control" asp-items="ViewBag.AuthorList"></select>
-                <a class="btn btn-success btn-sm btn-add-new-custom text-white" data-toggle="modal" data-target="#authorModal">Add New Author</a>
+                <a class="btn btn-success btn-sm btn-add-new-custom text-white mt-2" data-toggle="modal" data-target="#authorModal">Add New Author</a>
                 <input asp-for="AuthorName" hidden class="form-control mt-2">
             </div>
         </div>
@@ -41,7 +41,7 @@
                 @*<label asp-for="PublisherName">PublisherName</label>*@
                 <label asp-for="PublisherID"></label>
                 <select asp-for="PublisherID" class="form-control" asp-items="ViewBag.PublisherList"></select>
-                <a class="btn btn-success btn-sm btn-add-new-custom text-white" data-toggle="modal" data-target="#publisherModal">Add New Publisher</a>
+                <a class="btn btn-success btn-sm btn-add-new-custom text-white mt-2" data-toggle="modal" data-target="#publisherModal">Add New Publisher</a>
                 <input asp-for="PublisherName" hidden class="form-control mt-2">
             </div>
         </div>
@@ -64,7 +64,7 @@
                 @*<label asp-for="CategoryName"></label>*@
                 <label asp-for="CategoryID"></label>
                 <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryList"></select>
-                <a class="btn btn-success btn-sm btn-add-new-custom text-white" data-toggle="modal" data-target="#categoryModal">Add New Category</a>
+                <a class="btn btn-success btn-sm btn-add-new-custom text-white mt-2" data-toggle="modal" data-target="#categoryModal">Add New Category</a>
                 <input asp-for="CategoryName" hidden class="form-control mt-2">
 
                 @*@Html.DropDownListFor(x => x.CategoryID, new SelectList(ViewBag.CategoryList,"Value","Text"),
@@ -219,7 +219,18 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input class="form-control" asp-for="PublisherNameDTO" type="text" placeholder="Enter name..." />
+                    </div>
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input class="form-control" asp-for="PublisherCountryDTO" type="text" placeholder="Enter country..." />
+                    </div>
+                    <div class="form-group">
+                        <label>Year</label>
+                        <input class="form-control" asp-for="PublisherYearDTO" type="text" placeholder="Enter year..." />
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
@@ -240,7 +251,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <label>Category</label>
+                    <input class="form-control" type="text" asp-for="CategoryNameDTO" placeholder="Enter category..." />
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>

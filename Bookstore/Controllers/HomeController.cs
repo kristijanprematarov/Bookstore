@@ -23,7 +23,14 @@ namespace Bookstore.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var books = _bookService.GetAllBooks();
+
+            var homeViewModel = new HomeViewModel()
+            {
+                AllBooksList = books
+            };
+
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()
@@ -36,5 +43,7 @@ namespace Bookstore.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }

@@ -1,8 +1,64 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model Bookstore.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Bookstore"; // so ova go pravime naslovot na tabot
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Search Section -->
+<div class="container">
+    <form asp-action="Search">
+        <div class="p-3 search-main">
+            <button class="btn search-btn-icon">
+                <i class="fa fa-search"></i>
+            </button>
+            <input type="text" class="form-control search-box-style" id="searchbook" />
+            <button class="btn btn-success search-btn" id="searchBtn">Search</button>
+        </div>
+    </form>
 </div>
+
+
+<!-- Banner Section -->
+<div class="container-fluid">
+
+</div>
+
+
+<!-- All Books Section -->
+<div class="container-fluid">
+    <h2>All Books</h2>
+    <h6><em>List of all books</em></h6>
+    <div class="row pb-5">
+        @foreach (var book in Model.AllBooksList)
+        {
+            <div class="col-12 col-md-2 mt-5">
+                <div class="card h-100">
+                    <img src="#" alt="Alternate Text" class="img-fluid" style="max-width: 350px;" />
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => book.Title)</h5>
+                        <h6 class=""><em>by @Html.DisplayFor(modelItem => book.AuthorName)</em></h6>
+                        <hr />
+                        <p class="card-text">Category: @Html.DisplayFor(modelItem => book.CategoryName)</p>
+                        <p class="card-text">Genre: @Html.DisplayFor(modelItem => book.Genre)</p>
+                        <p class="card-text">Book Type: @Html.DisplayFor(modelItem => book.BookType)</p>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @* ************************** AKO POLNIME SO AJAX !!!! ************************** *@
+        @*<div class="col-12 col-md-2 mt-5">
+                <div class="card h-100">
+                    <img src="#" alt="Alternate Text" class="img-fluid" style="max-width: 350px;" />
+                    <div class="card-body">
+                        <input type="text" id="bookTitleFromJson" />
+                    </div>
+                </div>
+            </div>*@
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/home/home.js"></script>
+}

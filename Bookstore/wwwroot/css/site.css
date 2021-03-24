@@ -92,6 +92,12 @@ body {
 
 .btn-add-new-custom {
     float: right !important;
+    cursor: pointer !important;
+}
+
+.btn-add-new-custom:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
 }
 
 /* ******* FOOTER ******* */

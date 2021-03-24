@@ -1,5 +1,53 @@
-﻿
-@{
-}
+﻿@model IEnumerable<Bookstore.Entities.Category>
 
-<h1>Category</h1>
+<div class="container">
+
+    <h1>Category</h1>
+
+    <hr />
+
+    <table class="table table-bordered">
+
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => category.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => category.Name)
+                    </td>
+                    <td>
+                        <a class="btn-secondary btn btn-block" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id">
+                            <i class="fas fa-edit"></i>
+                            &nbsp; &nbsp;
+                            Edit
+                        </a>
+                        <a class="btn-info btn btn-block" asp-controller="Category" asp-action="Details" asp-route-id="@category.Id">
+                            <i class="fas fa-info"></i>
+                            &nbsp; &nbsp;
+                            Details
+                        </a>
+                        <a class="btn-danger btn btn-block" asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id">
+                            <i class="fas fa-trash"></i>
+                            &nbsp; &nbsp;
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
+
