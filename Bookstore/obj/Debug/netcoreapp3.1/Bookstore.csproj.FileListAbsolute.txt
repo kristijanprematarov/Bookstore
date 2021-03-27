@@ -224,3 +224,15 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Micr
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Author\Create.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Author\Edit.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Author\Details.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Author\Delete.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Category\Create.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Category\Edit.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Category\Details.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Category\Delete.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Publisher\Create.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Publisher\Edit.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Publisher\Details.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Publisher\Delete.cshtml.g.cs

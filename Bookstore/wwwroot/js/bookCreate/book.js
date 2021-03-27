@@ -2,14 +2,6 @@
 
 $(document).ready(function () {
     console.log('Document is ready!!!');
-
-    //CREATE JQuery KRIS
-    $("#AuthorID option").first().attr("hidden", "true");
-
-    $("#PublisherID option").first().attr("hidden", "true");
-
-    $("#CategoryID option").first().attr("hidden", "true");
-
 });
 
 
@@ -17,6 +9,11 @@ $("#AuthorID").change(function () {
 
     var optionSelected = $("option:selected", this);
     console.log(optionSelected);
+
+    //js
+    //var getVal = document.getElementById("AuthorName").value;
+    //jquery
+    //var $("#AuthorName").val();
 
     //NACIN 1
     var optionName = optionSelected[0].innerHTML;
@@ -88,13 +85,11 @@ $("#CategoryID").change(function () {
 $("#addNewAuthor").click(function () {
     console.log("modal button author add new author");
 
-    //Note: propertinjata so gi polnime mora da se istite od Entitetskata klasa !!!
-    var data =
-    {
+    var data = {
         Name: $("#AuthorNameDTO").val(),
         Country: $("#AuthorCountryDTO").val(),
         DateBirth: $("#AuthorDateBirthDTO").val(),
-        ShortDescription: $("#AuthorShortDescriptionDTO").val(),
+        ShortDescritpion: $("#AuthorShortDescriptionDTO").val(),
         Language: $("#AuthorLanguageDTO").val(),
         Gender: $("#AuthorGenderDTO").val()
     };
@@ -105,25 +100,27 @@ $("#addNewAuthor").click(function () {
         data: data,
         dataType: "json",
         success: function (data) {
-            console.log(data);
-            //AuthorID ... na selectot zalepi mu go kreiraniot Author kako nova option
-            //<option value="value">text</option>
-            $("#AuthorID").append(`<option value="${data.id}">` + data.name + "</option>")
+            //console.log(data);
+            if (data.name !== null) {
+                // AuthorID
+                $("#AuthorID").append("<option value=" + data.id + ">" + data.name + "</option>");
+                $('#authorAddedModal').modal('toggle');
+                $('#authorModal').modal('toggle');
+            } else {
+                $('#authorNotAddedModal').modal('toggle');
+            }
         },
         error: function () {
-            alert("Error adding new Author!");
+            $('#authorNotAddedModal').modal('toggle');
         }
     });
 
-    
 });
 
 $("#addNewPublisher").click(function () {
     console.log("modal button publisher add new publisher");
 
-    //Note: propertinjata so gi polnime mora da se istite od Entitetskata klasa !!!
-    var data =
-    {
+    var data = {
         Name: $("#PublisherNameDTO").val(),
         Country: $("#PublisherCountryDTO").val(),
         Year: $("#PublisherYearDTO").val()
@@ -136,24 +133,25 @@ $("#addNewPublisher").click(function () {
         dataType: "json",
         success: function (data) {
             console.log(data);
-            //PublisherID ... na selectot zalepi mu go kreiraniot Publisher kako nova option
-            //<option value="value">text</option>
-            $("#PublisherID").append(`<option value="${data.id}">` + data.name + "</option>")
+            if (data.name !== null) {
+                // PublisherID
+                $("#PublisherID").append("<option value=" + data.id + ">" + data.name + "</option>");
+                $('#publisherAddedModal').modal('toggle');
+                $('#publisherModal').modal('toggle');
+            } else {
+                $('#publisherNotAddedModal').modal('toggle');
+            }
         },
         error: function () {
-            alert("Error adding new Publisher!");
+            $('#publisherNotAddedModal').modal('toggle');
         }
     });
-
-
 });
 
 $("#addNewCategory").click(function () {
     console.log("modal button category add new category");
 
-    //Note: propertinjata so gi polnime mora da se istite od Entitetskata klasa !!!
-    var data =
-    {
+    var data = {
         Name: $("#CategoryNameDTO").val()
     };
 
@@ -164,15 +162,19 @@ $("#addNewCategory").click(function () {
         dataType: "json",
         success: function (data) {
             console.log(data);
-            //CategoryID ... na selectot zalepi mu ja kreiranata kategorija kako nova option
-            //<option value="value">text</option>
-            $("#CategoryID").append(`<option value="${data.id}">` + data.name + "</option>")
+            if (data.name !== null) {
+                // CategoryID
+                $("#CategoryID").append("<option value=" + data.id + ">" + data.name + "</option>");
+                $('#categoryAddedModal').modal('toggle');
+                $('#categoryModal').modal('toggle');
+            } else {
+                $('#categoryNotAddedModal').modal('toggle');
+            }
         },
         error: function () {
-            alert("Error adding new Category!");
+            $('#categoryNotAddedModal').modal('toggle');
         }
     });
-
 });
 
 

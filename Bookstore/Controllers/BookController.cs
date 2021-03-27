@@ -146,7 +146,7 @@ namespace Bookstore.Controllers
             return View(book);
         }
 
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
             var book = _bookService.GetBookById(id);

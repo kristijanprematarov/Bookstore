@@ -27,8 +27,71 @@ namespace Bookstore.Controllers
 
         public JsonResult CreateCategoryAJAX(Category category)
         {
-            _categoryService.Add(category);
+            if (category != null)
+            {
+                if (!string.IsNullOrEmpty(category.Name) && !string.IsNullOrWhiteSpace(category.Name))
+                {
+                    _categoryService.Add(category);
+                }
+            }
+
             return Json(category);
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Category category)
+        {
+            if (category != null)
+            {
+                if (!string.IsNullOrEmpty(category.Name) && !string.IsNullOrWhiteSpace(category.Name))
+                {
+                    _categoryService.Add(category);
+                }
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var category = _categoryService.GetCategoryById(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category category)
+        {
+            _categoryService.Edit(category);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var category = _categoryService.GetCategoryById(id);
+            return View(category);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var category = _categoryService.GetCategoryById(id);
+            return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Category category)
+        {
+            _categoryService.Delete(category.Id);
+
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
