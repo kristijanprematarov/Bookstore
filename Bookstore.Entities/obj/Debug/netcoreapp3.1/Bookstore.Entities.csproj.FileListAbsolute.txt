@@ -6,4 +6,3 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreap
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.pdb
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.csprojAssemblyReference.cache

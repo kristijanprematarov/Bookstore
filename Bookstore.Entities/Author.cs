@@ -15,10 +15,10 @@ namespace Bookstore.Entities
 
         [StringLength(100)]
         public string Country { get; set; }
-        
+
         public DateTime DateBirth { get; set; }
 
-        [StringLength(500)]
+        [StringLength(1000)]
         public string ShortDescription { get; set; }
 
         [StringLength(50)]

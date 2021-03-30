@@ -1,4 +1,76 @@
-﻿/*Basic*/
+﻿/* ---------------------------------GOOGLE FONTS-------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+/* roboto-300 - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/roboto-v20-latin-300.eot"); /* IE9 Compat Modes */
+    src: local(""), url("../fonts/roboto-v20-latin-300.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/roboto-v20-latin-300.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/roboto-v20-latin-300.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin-300.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/roboto-v20-latin-300.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+
+/* roboto-regular - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/roboto-v20-latin-regular.eot"); /* IE9 Compat Modes */
+    src: local(""), url("../fonts/roboto-v20-latin-regular.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/roboto-v20-latin-regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/roboto-v20-latin-regular.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin-regular.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+    url("../fonts/roboto-v20-latin-regular.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+
+/* roboto-500 - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/roboto-v20-latin-500.eot"); /* IE9 Compat Modes */
+    src: local(""), url("../fonts/roboto-v20-latin-500.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/roboto-v20-latin-500.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/roboto-v20-latin-500.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin-500.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/roboto-v20-latin-500.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+
+/* roboto-700 - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/roboto-v20-latin-700.eot"); /* IE9 Compat Modes */
+    src: local(""), url("../fonts/roboto-v20-latin-700.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/roboto-v20-latin-700.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/roboto-v20-latin-700.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin-700.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/roboto-v20-latin-700.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+
+/* roboto-900 - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 900;
+    src: url("../fonts/roboto-v20-latin-900.eot"); /* IE9 Compat Modes */
+    src: local(""), url("../fonts/roboto-v20-latin-900.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/roboto-v20-latin-900.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/roboto-v20-latin-900.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto-v20-latin-900.ttf") format("truetype"),
+    /* Safari, Android, iOS */ url("../fonts/roboto-v20-latin-900.svg#Roboto") format("svg"); /* Legacy iOS */
+}
+
+/* ---------------------------------THE CSS STYLING-------------------------------------------- */
+
+/*Basic*/
 a.navbar-brand {
     white-space: normal;
     text-align: center;
@@ -86,6 +158,63 @@ body {
     padding-left: 4.5em;
     padding-right: 13em;
     background-color: #eaeaea;
+}
+
+/* ******* Home INDEX ******* */
+
+.bookstore-background {
+    background-image: url("../img/Books_shutterstock_hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 20%;
+    padding-top: 5%;
+    position: relative !important;
+}
+
+.banner-text-style1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 35px;
+    padding-left: 5%;
+    font-family: Roboto;
+    font-weight: 500;
+}
+
+.banner-text-style2 {
+    color: white;
+    text-transform: lowercase;
+    font-size: 35px;
+    padding-left: 5%;
+    margin-top: 1%;
+    font-weight: lighter;
+    font-family: Roboto;
+}
+
+.quote-text-quote {
+    color: white;
+    padding-left: 5%;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: lighter;
+    margin-top: 1%;
+    text-align: justify;
+}
+
+.quote-text-author {
+    color: white;
+    padding-left: 5%;
+    font-size: 19px;
+    font-family: Roboto;
+    margin-top: 1%;
+}
+
+.quote-text-tags {
+    color: #878787;
+    padding-left: 5%;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1%;
 }
 
 /* ******* Book ******* */

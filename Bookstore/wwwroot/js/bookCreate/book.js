@@ -107,6 +107,7 @@ $("#addNewAuthor").click(function () {
                 $('#authorAddedModal').modal('toggle');
                 $('#authorModal').modal('toggle');
             } else {
+                $('#authorModal').modal('toggle');
                 $('#authorNotAddedModal').modal('toggle');
             }
         },
@@ -139,6 +140,7 @@ $("#addNewPublisher").click(function () {
                 $('#publisherAddedModal').modal('toggle');
                 $('#publisherModal').modal('toggle');
             } else {
+                $('#publisherModal').modal('toggle');
                 $('#publisherNotAddedModal').modal('toggle');
             }
         },
@@ -168,6 +170,7 @@ $("#addNewCategory").click(function () {
                 $('#categoryAddedModal').modal('toggle');
                 $('#categoryModal').modal('toggle');
             } else {
+                $('#categoryModal').modal('toggle');
                 $('#categoryNotAddedModal').modal('toggle');
             }
         },

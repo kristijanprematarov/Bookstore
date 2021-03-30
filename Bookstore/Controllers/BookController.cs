@@ -155,6 +155,7 @@ namespace Bookstore.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpGet]
         public JsonResult GetAllBooksAJAX()
         {
             var allBooks = _bookService.GetAllBooks();
