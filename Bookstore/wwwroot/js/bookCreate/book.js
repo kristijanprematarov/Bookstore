@@ -180,4 +180,30 @@ $("#addNewCategory").click(function () {
     });
 });
 
+$("#uploadPhoto").click(function () {
 
+    var data = new FormData();
+
+    var files = $("#photoUpload").get(0).files;
+
+    if (files.length > 0) {
+        data.append("UploadedImage", files[0]);
+    }
+
+    $.ajax({
+
+        type: "POST",
+        url: "/Book/UploadPhoto",
+        data: data,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            console.log(data.dbPath);
+            $("#PhotoURL").val(data.dbPath);
+        },
+        error: function () {
+            alert("Error uploading photo!");
+        }
+    });
+
+});

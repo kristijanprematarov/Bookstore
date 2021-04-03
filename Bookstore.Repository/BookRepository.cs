@@ -1,6 +1,7 @@
 ﻿using Bookstore.Data;
 using Bookstore.Entities;
 using Bookstore.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,13 @@ namespace Bookstore.Repository
         {
             var allBooks = _dataContext.Books.AsEnumerable();
             return allBooks;
+        }
+
+        public IEnumerable<Book> GetAllBooksWithFullRelationalData()
+        {
+            var result = _dataContext.Books.Include(a => a.Author).Include(c => c.Category).Include(p => p.Publisher);
+
+            return result;
         }
 
         public Book GetBookById(int id)

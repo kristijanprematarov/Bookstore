@@ -1,12 +1,12 @@
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\bin\Debug\netcoreapp3.1\Bookstore.Data.deps.json
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\bin\Debug\netcoreapp3.1\Bookstore.Data.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\bin\Debug\netcoreapp3.1\Bookstore.Data.pdb
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.AssemblyInfoInputs.cache
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.AssemblyInfo.cs
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.csproj.CoreCompileInputs.cache
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.dll
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.pdb
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\bin\Debug\netcoreapp3.1\Bookstore.Entities.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\bin\Debug\netcoreapp3.1\Bookstore.Entities.pdb
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.csprojAssemblyReference.cache
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.AssemblyInfoInputs.cache
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.AssemblyInfo.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.csproj.CoreCompileInputs.cache
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.csproj.CopyComplete
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Data\obj\Debug\netcoreapp3.1\Bookstore.Data.pdb

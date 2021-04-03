@@ -1,6 +1,7 @@
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\bin\Debug\netcoreapp3.1\Bookstore.Entities.deps.json
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\bin\Debug\netcoreapp3.1\Bookstore.Entities.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\bin\Debug\netcoreapp3.1\Bookstore.Entities.pdb
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.csprojAssemblyReference.cache
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.AssemblyInfoInputs.cache
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.AssemblyInfo.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore.Entities\obj\Debug\netcoreapp3.1\Bookstore.Entities.csproj.CoreCompileInputs.cache

@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace Bookstore.Controllers
@@ -160,6 +162,47 @@ namespace Bookstore.Controllers
         {
             var allBooks = _bookService.GetAllBooks();
             return Json(new { booksData = allBooks });
+        }
+
+        [HttpPost]
+
+        public IActionResult UploadPhoto()
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+
+                var folderName = Path.Combine("wwwroot", "photos");
+
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+
+                if (file.Length > 0)
+                {
+                    //gi kratime navodnicite na imeto, so ova ke vrati samo ime
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+
+                    var dbPath = fileName;
+
+                    // 1. targetWhereToCopy --> stream
+                    // 2. copy contents of uploaded file in our case "file" to the target stream 
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    return Ok(new { dbPath }); //Status 200 ok response 
+                }
+                else
+                {
+                    return BadRequest(); //Status 400 bad requst 
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Internal server error: " + ex);
+            }
         }
 
 

@@ -21,6 +21,8 @@ namespace Bookstore.Service.Interfaces
 
         IEnumerable<Book> GetAllBooks();
 
+        IEnumerable<Book> GetAllBooksWithFullRelationalData();
+
         (List<SelectListItem> Categories, List<SelectListItem> Authors, List<SelectListItem> Publishers) FillDropdowns(IEnumerable<Category> categories,
             IEnumerable<Author> authors,
             IEnumerable<Publisher> publishers);
