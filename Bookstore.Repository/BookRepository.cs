@@ -1,7 +1,9 @@
 ﻿using Bookstore.Data;
 using Bookstore.Entities;
+using Bookstore.Entities.Logger;
 using Bookstore.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,16 +14,27 @@ namespace Bookstore.Repository
     public class BookRepository : IBookRepository
     {
         private readonly DataContext _dataContext;
+        private readonly ILogger<BookRepository> _logger;
 
-        public BookRepository(DataContext dataContext)
+        public BookRepository(DataContext dataContext, ILogger<BookRepository> logger)
         {
             this._dataContext = dataContext;
+            this._logger = logger;
         }
 
         public void AddBook(Book book)
         {
-            _dataContext.Books.Add(book);
-            _dataContext.SaveChanges();
+            try
+            {
+                _dataContext.Books.Add(book);
+                _dataContext.SaveChanges();
+                _logger.LogInformation(LoggerMessageDisplay.BookCreated);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(LoggerMessageDisplay.BookCreatedError + " | " + ex);
+                throw;
+            }
         }
 
         public void DeleteBook(int id)

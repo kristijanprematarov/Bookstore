@@ -236,3 +236,7 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Book
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Bookstore.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Bookstore.pdb
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Bookstore.genruntimeconfig.cache
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\nlog.config
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
