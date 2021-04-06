@@ -1,8 +1,10 @@
 ﻿using Bookstore.Entities;
+using Bookstore.Entities.Logger;
 using Bookstore.Models;
 using Bookstore.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,21 +20,25 @@ namespace Bookstore.Controllers
         private readonly IAuthorService _authorService;
         private readonly ICategoryService _categoryService;
         private readonly IPublisherService _publisherService;
+        private readonly ILogger<BookController> _logger;
 
         public BookController(
             IBookService bookService,
             IAuthorService authorService,
             ICategoryService categoryService,
-            IPublisherService publisherService)
+            IPublisherService publisherService,
+            ILogger<BookController> logger)
         {
             this._bookService = bookService;
             this._authorService = authorService;
             this._categoryService = categoryService;
             this._publisherService = publisherService;
+            this._logger = logger;
         }
         public IActionResult Index()
         {
             var books = _bookService.GetAllBooks();
+            _logger.LogInformation(LoggerMessageDisplay.BooksListed);
 
             return View(books);
         }
@@ -72,38 +78,37 @@ namespace Bookstore.Controllers
                 //_authorService.Add(author);
                 //,, --> vaka moze i za category i za publisher
 
-
-                var book = new Book();
-                book.Title = model.BookTitle;
-                book.AuthorID = model.AuthorID;
-                book.AuthorName = model.AuthorName;
-                book.BookCoverType = model.BookCoverType;
-                book.BookType = model.BookType;
-                book.CategoryID = model.CategoryID;
-                book.CategoryName = model.CategoryName;
-                book.Copies = model.Copies;
-                book.Country = model.Country;
-                book.DateAdded = DateTime.Now;
-                book.Description = model.Description;
-                book.Edition = model.Edition;
-                book.Genre = model.Genre;
-                book.Language = model.Language;
-                book.NumberOfPages = model.NumberOfPages;
-                book.PhotoURL = model.PhotoURL;
-                book.Price = model.Price;
-                book.PublisherID = model.PublisherID;
-                book.PublisherName = model.PublisherName;
-                book.Rating = model.Rating;
-                book.Shipping = model.Shipping;
-                book.SoldItems = model.SoldItems;
-                book.Weight = model.Weight;
-                book.YearOfIssue = model.YearOfIssue;
-                book.Dimensions = model.Dimensions;
-
-
-                _bookService.Add(book);
-
             }
+
+            var book = new Book();
+            book.Title = model.BookTitle;
+            book.AuthorID = model.AuthorID;
+            book.AuthorName = model.AuthorName;
+            book.BookCoverType = model.BookCoverType;
+            book.BookType = model.BookType;
+            book.CategoryID = model.CategoryID;
+            book.CategoryName = model.CategoryName;
+            book.Copies = model.Copies;
+            book.Country = model.Country;
+            book.DateAdded = DateTime.Now;
+            book.Description = model.Description;
+            book.Edition = model.Edition;
+            book.Genre = model.Genre;
+            book.Language = model.Language;
+            book.NumberOfPages = model.NumberOfPages;
+            book.PhotoURL = model.PhotoURL;
+            book.Price = model.Price;
+            book.PublisherID = model.PublisherID;
+            book.PublisherName = model.PublisherName;
+            book.Rating = model.Rating;
+            book.Shipping = model.Shipping;
+            book.SoldItems = model.SoldItems;
+            book.Weight = model.Weight;
+            book.YearOfIssue = model.YearOfIssue;
+            book.Dimensions = model.Dimensions;
+
+            _bookService.Add(book);
+            _logger.LogInformation(LoggerMessageDisplay.BookCreated);
 
             return RedirectToAction(nameof(Index));
         }
@@ -130,7 +135,26 @@ namespace Bookstore.Controllers
         [HttpPost]
         public IActionResult Edit(Book book, int id)
         {
-            _bookService.Edit(book);
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _bookService.Edit(book);
+                    _logger.LogInformation(LoggerMessageDisplay.BookEdited);
+
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    _logger.LogError(LoggerMessageDisplay.BookEditErrorModelStateInvalid);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(LoggerMessageDisplay.BookEditNotFound + " | " + ex);
+                throw;
+            }
+
             return RedirectToAction(nameof(Index));
         }
 

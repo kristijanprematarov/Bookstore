@@ -41,8 +41,8 @@
                 <div class="card h-100 mx-auto" style="max-width: 350px;">
                     <img src="~/photos/@book.PhotoURL" alt="Alternate Text" class="card-img-top" style="height:450px" />
                     <div class="card-body">
-                        <h5 class="card-title">@Html.DisplayFor(modelItem => book.Title)</h5>
-                        <h6 class=""><em>by @Html.DisplayFor(modelItem => book.AuthorName)</em></h6>
+                        <h5 class="card-title"><a class="text-dark" href="/Book/Details/@book.Id">@Html.DisplayFor(modelItem => book.Title)</a></h5>
+                        <h6 class=""><em>by <a class="text-dark" href="/Author/Details/@book.AuthorID">@Html.DisplayFor(modelItem => book.AuthorName)</a></em></h6>
                         <hr />
                         <p class="card-text">Category: @Html.DisplayFor(modelItem => book.CategoryName)</p>
                         <p class="card-text">Genre: @Html.DisplayFor(modelItem => book.Genre)</p>

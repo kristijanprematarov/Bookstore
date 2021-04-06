@@ -32,7 +32,7 @@ namespace Bookstore.Repository
             }
             catch (Exception ex)
             {
-                _logger.LogError(LoggerMessageDisplay.BookCreatedError + " | " + ex);
+                _logger.LogError(LoggerMessageDisplay.BookCreated + " | " + ex);
                 throw;
             }
         }

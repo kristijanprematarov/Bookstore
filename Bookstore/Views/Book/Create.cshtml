@@ -7,7 +7,7 @@
 
     <hr>
 
-    <form asp-action="Create">
+    <form asp-action="Create" name="bookcreate">
 
         <div class="form-row">
             <div class="form-group col-md-6">
@@ -153,23 +153,23 @@
             </div>
         </div>
 
-        <!--UPLOAD PHOTO-->
-        <div class="form-row">
-            <div class="form-group col-12">
-                <label>Upload Photo - Book Cover</label>
-            </div>
-            <div class="col-12">
-                <input type="file" #file accept="image/*" id="photoUpload" />
-                <button class="btn btn-custom-upload btn-block mt-2" id="uploadPhoto">Upload Photo</button>
-            </div>
-        </div>
-
         <div class="form-row">
             <div class="btn-group col-12 mt-4">
                 <input class="btn-success btn" type="submit" name="Create" value="Create" />
             </div>
         </div>
     </form>
+
+    <!--UPLOAD PHOTO-->
+    <div class="form-row">
+        <div class="form-group col-12">
+            <label>Upload Photo - Book Cover</label>
+        </div>
+        <div class="col-12">
+            <input type="file" #file accept="image/*" id="photoUpload" />
+            <button class="btn btn-custom-upload btn-block mt-2" id="uploadPhoto">Upload Photo</button>
+        </div>
+    </div>
 
     <div class="mt-3">
         <a asp-action="Index">Back to list</a>
