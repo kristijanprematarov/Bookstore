@@ -54,6 +54,9 @@
                         <button class="btn btn-secondary btn-block"><i class="fas fa-plus-circle"></i> Add to Wishlist</button>
                         <button class="btn btn-success btn-block"><i class="fas fa-cart-plus"></i> Add to Cart</button>
                     </div>
+                    <div class="price text-center">
+                        <p class="w-75 mx-auto card-text bg-light text-success font-weight-bold rounded-pill animate__animated animate__heartBeat animate__infinite animate__faster">@Html.DisplayFor(modelItem => book.Price)&euro;</p>
+                    </div>
                 </div>
             </div>
         }

@@ -34,9 +34,16 @@ namespace Bookstore
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("BookstoreConnection")));
+
+            //IDENTITY
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<DataContext>();
+
+            //MVC
             services.AddControllersWithViews();
+
+            //RAZOR
             services.AddRazorPages();
 
             // *** Repositories 
@@ -56,6 +63,7 @@ namespace Bookstore
             services.AddTransient<IPublisherService, PublisherService>();
             services.AddTransient<IShoppingCartService, ShoppingCartService>();
             services.AddTransient<IWishlistService, WishlistService>();
+            services.AddTransient<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

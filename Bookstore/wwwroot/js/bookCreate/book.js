@@ -106,6 +106,7 @@ $("#addNewAuthor").click(function () {
                 $("#AuthorID").append("<option value=" + data.id + ">" + data.name + "</option>");
                 $('#authorAddedModal').modal('toggle');
                 $('#authorModal').modal('toggle');
+                $("#AuthorID").val(data.id);
             } else {
                 $('#authorModal').modal('toggle');
                 $('#authorNotAddedModal').modal('toggle');
@@ -139,6 +140,7 @@ $("#addNewPublisher").click(function () {
                 $("#PublisherID").append("<option value=" + data.id + ">" + data.name + "</option>");
                 $('#publisherAddedModal').modal('toggle');
                 $('#publisherModal').modal('toggle');
+                $("#PublisherID").val(data.id);
             } else {
                 $('#publisherModal').modal('toggle');
                 $('#publisherNotAddedModal').modal('toggle');
@@ -169,6 +171,7 @@ $("#addNewCategory").click(function () {
                 $("#CategoryID").append("<option value=" + data.id + ">" + data.name + "</option>");
                 $('#categoryAddedModal').modal('toggle');
                 $('#categoryModal').modal('toggle');
+                $("#CategoryID").val(data.id);
             } else {
                 $('#categoryModal').modal('toggle');
                 $('#categoryNotAddedModal').modal('toggle');

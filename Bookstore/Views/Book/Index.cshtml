@@ -59,11 +59,14 @@
                             &nbsp; &nbsp;
                             Details
                         </a>
-                        <a class="btn-danger btn btn-block" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id">
-                            <i class="fas fa-trash"></i>
-                            &nbsp; &nbsp;
-                            Delete
-                        </a>
+                        @if (ViewContext.HttpContext.User.IsInRole("admin"))
+                        {
+                            <a class="btn-danger btn btn-block" asp-controller="Book" asp-action="Delete" asp-route-id="@book.Id">
+                                <i class="fas fa-trash"></i>
+                                &nbsp; &nbsp;
+                                Delete
+                            </a>
+                        }
                     </td>
                 </tr>
             }

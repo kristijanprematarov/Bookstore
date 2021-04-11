@@ -22,6 +22,49 @@ namespace Bookstore.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            // ************** DATA SEEDING **************
+
+            #region Admin and Roles
+
+            const string ADMIN_ID = "b4280b6a-0613-4cbd-a9e6-f1701e926e73";
+            const string ROLE_ID = ADMIN_ID;
+            const string password = "admin123abc";
+
+            modelBuilder.Entity<IdentityRole>().HasData
+                (
+                    new IdentityRole { Id = ROLE_ID, Name = "admin", NormalizedName = "ADMIN" },
+                    new IdentityRole { Id = "b4280b6a-0613-4cbd-a9e6-f1701e926e74", Name = "editor", NormalizedName = "EDITOR" },
+                    new IdentityRole { Id = "b4280b6a-0613-4cbd-a9e6-f1701e926e75", Name = "guest", NormalizedName = "GUEST" }
+                );
+
+            //PASSWORD HASHER TOOL
+            var hasher = new PasswordHasher<IdentityUser>();
+
+            modelBuilder.Entity<IdentityUser>().HasData
+                (
+                    new IdentityUser
+                    {
+                        Id = ADMIN_ID,
+                        UserName = "admin@bookstore.com",
+                        NormalizedUserName = "ADMIN@BOOKSTORE.COM",
+                        Email = "admin@bookstore.com",
+                        EmailConfirmed = true,
+                        PasswordHash = hasher.HashPassword(null, password),
+                        SecurityStamp = string.Empty,
+                        ConcurrencyStamp = "c8554266-b401-4591-9aeb-a9283053fc58"
+                    }
+                );
+
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData
+                (
+                    new IdentityUserRole<string>
+                    {
+                        UserId = ADMIN_ID,
+                        RoleId = ROLE_ID
+                    }
+                );
+
+            #endregion
 
             #region Category
             modelBuilder.Entity<Category>().HasData

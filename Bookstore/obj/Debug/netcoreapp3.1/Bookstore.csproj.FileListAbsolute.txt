@@ -240,3 +240,8 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\nlog
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Delete.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Details.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Edit.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs

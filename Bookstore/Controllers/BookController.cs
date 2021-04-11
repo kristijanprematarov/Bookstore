@@ -1,19 +1,21 @@
-﻿using Bookstore.Entities;
-using Bookstore.Entities.Logger;
-using Bookstore.Models;
-using Bookstore.Service.Interfaces;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-
-namespace Bookstore.Controllers
+﻿namespace Bookstore.Controllers
 {
+    using Bookstore.Entities;
+    using Bookstore.Entities.Logger;
+    using Bookstore.Models;
+    using Bookstore.Service.Interfaces;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using Microsoft.Extensions.Logging;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Net.Http.Headers;
+    using System.Threading.Tasks;
+
+    [Authorize(Roles = "admin,editor")]
     public class BookController : Controller
     {
         private readonly IBookService _bookService;
@@ -166,6 +168,7 @@ namespace Bookstore.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public IActionResult Delete(int id)
         {
             var book = _bookService.GetBookById(id);
@@ -173,6 +176,7 @@ namespace Bookstore.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "admin")]
         public IActionResult DeleteConfirmed(int id)
         {
             var book = _bookService.GetBookById(id);
@@ -182,6 +186,7 @@ namespace Bookstore.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin, editor")]
         public JsonResult GetAllBooksAJAX()
         {
             var allBooks = _bookService.GetAllBooks();
