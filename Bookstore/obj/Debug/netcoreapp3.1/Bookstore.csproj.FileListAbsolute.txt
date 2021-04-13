@@ -1,3 +1,4 @@
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\nlog.config
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\libman.json
@@ -65,6 +66,9 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Micr
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
@@ -226,6 +230,11 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razo
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\ShoppingCart\Index.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Delete.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Details.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Edit.cshtml.g.cs
+C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\Wishlist\Index.cshtml.g.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
@@ -236,12 +245,3 @@ C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Book
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Bookstore.dll
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Bookstore.pdb
 C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Bookstore.genruntimeconfig.cache
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\nlog.config
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.dll
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Delete.cshtml.g.cs
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Details.cshtml.g.cs
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Edit.cshtml.g.cs
-C:\Users\Kristijan\source\repos\Bookstore\Bookstore\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs

@@ -13,33 +13,47 @@ namespace Bookstore.Service
         /// <summary>
         /// Get all existing roles to fillup dropdownlist for RoleId, currentRole is optional because it is used in EditUser
         /// </summary>
-        public IQueryable<SelectListItem> GetSelectListRoles(IQueryable<IdentityRole> roles, string currentRole = "")
+        public IQueryable<SelectListItem> GetSelectListRoles(IQueryable<IdentityRole> roles, string? currentRoleName)
         {
             var selectList = new List<SelectListItem>();
 
             selectList.Add(new SelectListItem
             {
                 Value = "0",
-                Text = "Select role..."
+                Text = "Select role...",
+                Selected = false
             });
 
             foreach (var role in roles)
             {
-                if (role.Name.Equals(currentRole))
+                if (currentRoleName != null)
                 {
-                    selectList.Add(new SelectListItem
+                    if (role.Name.Equals(currentRoleName))
                     {
-                        Value = role.Id,
-                        Text = role.Name,
-                        Selected = true
-                    });
+                        selectList.Add(new SelectListItem
+                        {
+                            Value = role.Id,
+                            Text = role.Name,
+                            Selected = true
+                        });
+                    }
+                    else
+                    {
+                        selectList.Add(new SelectListItem
+                        {
+                            Value = role.Id,
+                            Text = role.Name,
+                            Selected = false
+                        });
+                    }
                 }
                 else
                 {
                     selectList.Add(new SelectListItem
                     {
                         Value = role.Id,
-                        Text = role.Name
+                        Text = role.Name,
+                        Selected = false
                     });
                 }
             }

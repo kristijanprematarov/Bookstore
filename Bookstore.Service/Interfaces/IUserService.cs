@@ -8,6 +8,6 @@
     using System.Text;
     public interface IUserService
     {
-        IQueryable<SelectListItem> GetSelectListRoles(IQueryable<IdentityRole> roles, string currentRole);
+        IQueryable<SelectListItem> GetSelectListRoles(IQueryable<IdentityRole> roles, string? currentRoleName);
     }
 }
