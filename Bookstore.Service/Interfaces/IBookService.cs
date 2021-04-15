@@ -1,4 +1,5 @@
 ﻿using Bookstore.Entities;
+using Bookstore.Entities.Quotes;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
@@ -27,5 +28,6 @@ namespace Bookstore.Service.Interfaces
             IEnumerable<Author> authors,
             IEnumerable<Publisher> publishers);
 
+        void AddQuote(QuoteMap quote);
     }
 }

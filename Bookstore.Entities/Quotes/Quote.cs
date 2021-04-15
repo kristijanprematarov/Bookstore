@@ -9,11 +9,9 @@
         [JsonPropertyName("tags")]
         public List<string> Tags { get; set; }
 
-        [JsonPropertyName("quote")]
-        public string TheQuote { get; set; }
+        public string quote { get; set; }
 
-        [JsonPropertyName("lang")]
-        public string Language { get; set; }
+        public string lang { get; set; }
 
         [JsonPropertyName("author")]
         public string Author { get; set; }

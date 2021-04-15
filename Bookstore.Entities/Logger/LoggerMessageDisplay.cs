@@ -77,5 +77,8 @@ namespace Bookstore.Entities.Logger
         public const string UserDeleted = "User is deleted successfully";
         public const string UserDeletedError = "User is NOT deleted, error happend in process of deletion";
         public const string UserAddedRole = "Added new role to user";
+        // Quote Messages
+        public const string QuoteAdded = "New quote is added in the DB";
+        public const string QuoteNotAdded = "Problem adding the quote in the DB";
     }
 }

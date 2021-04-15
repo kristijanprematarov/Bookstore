@@ -1,6 +1,7 @@
 ﻿using Bookstore.Data;
 using Bookstore.Entities;
 using Bookstore.Entities.Logger;
+using Bookstore.Entities.Quotes;
 using Bookstore.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -80,6 +81,21 @@ namespace Bookstore.Repository
         {
             var bookById = _dataContext.Books.FirstOrDefault(book => book.Id == id);
             return bookById;
+        }
+
+        public void AddQuote(QuoteMap quote)
+        {
+            try
+            {
+                _dataContext.Quotes.Add(quote);
+                _dataContext.SaveChanges();
+                _logger.LogInformation(LoggerMessageDisplay.QuoteAdded);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(LoggerMessageDisplay.QuoteNotAdded + " | " + ex);
+                throw;
+            }
         }
     }
 }

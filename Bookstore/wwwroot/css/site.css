@@ -68,6 +68,11 @@
     /* Safari, Android, iOS */ url("../fonts/roboto-v20-latin-900.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 
+@font-face {
+    font-family: "Papyrus";
+    src: url("../fonts/papyrus.ttf");
+}
+
 /* ---------------------------------THE CSS STYLING-------------------------------------------- */
 
 /*Basic*/
@@ -148,62 +153,80 @@ body {
 
 .search-main {
     position: relative;
-    padding-left: 5em !important;
-    padding-right: 5em !important;
-}
-
-.search-btn {
-    position: absolute !important;
-    top: 23px;
-    right: 6em;
-    padding-left: 4em;
-    padding-right: 4em;
 }
 
 .search-btn-icon {
     position: absolute !important;
     top: 20px;
-    left: 5em;
+    margin-left: 5px;
     font-size: 1.2em;
-    background-color: #eaeaea;
+    background-color: #EAEAEA;
 }
 
 .search-box-style {
     height: 50px;
-    padding-left: 4.5em;
-    padding-right: 13em;
-    background-color: #eaeaea;
+    background-color: #EAEAEA;
+    padding-left: 3.5rem;
+}
+
+@media (max-width: 800px) {
+    .search-btn {
+        margin-top: 5px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 800px) {
+    .search-btn {
+        position: absolute !important;
+        top: 23px;
+        right: 1.5em;
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+
+    .search-box-style {
+        padding-right: 12rem;
+    }
 }
 
 /* ******* Home INDEX ******* */
+
+.banner-container {
+    position: relative;
+    min-height: 500px;
+}
 
 .bookstore-background {
     background-image: url("../img/Books_shutterstock_hero.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding-bottom: 20%;
-    padding-top: 5%;
-    position: relative !important;
+    position: absolute !important;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    filter: blur(5px);
 }
 
 .banner-text-style1 {
     color: white;
     text-transform: uppercase;
-    font-size: 35px;
+    font-size: 30px;
     padding-left: 5%;
-    font-family: Roboto;
-    font-weight: 500;
+    font-family: Papyrus;
+    text-shadow: 0 1px 1px #505050, -1px 0px 1px #767676, -2px 3px 1px #000000, -3px 4px 1px #000000, -4px 4px 1px #000000;
 }
 
 .banner-text-style2 {
     color: white;
     text-transform: lowercase;
-    font-size: 35px;
+    font-size: 30px;
     padding-left: 5%;
     margin-top: 1%;
     font-weight: lighter;
-    font-family: Roboto;
+    font-family: Papyrus;
+    text-shadow: 0 1px 1px #505050, -1px 0px 1px #767676, -2px 3px 1px #000000, -3px 4px 1px #000000, -4px 4px 1px #000000;
 }
 
 .quote-text-quote {
@@ -226,7 +249,7 @@ body {
 
 .quote-text-tags {
     color: #878787;
-    padding-left: 5%;
+    margin-left: 5%;
     font-size: 14px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 1%;

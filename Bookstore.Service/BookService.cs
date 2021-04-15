@@ -1,4 +1,5 @@
 ﻿using Bookstore.Entities;
+using Bookstore.Entities.Quotes;
 using Bookstore.Repository.Interfaces;
 using Bookstore.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -60,6 +61,11 @@ namespace Bookstore.Service
         {
             var result = _bookRepository.GetBookById(id);
             return result;
+        }
+
+        public void AddQuote(QuoteMap quote)
+        {
+            _bookRepository.AddQuote(quote);
         }
 
         // ******************* HELPER FUNCTIONS *******************

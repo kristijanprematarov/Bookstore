@@ -19,21 +19,24 @@
 
 
 <!-- Banner Section -->
-<div class="container-fluid bookstore-background px-0">
-    <h1 class="display-4 banner-text-style1 animate__animated animate__fadeIn animate__slower">Welcome to our online bookstore!</h1>
-    <h4 class="display-4 banner-text-style2 animate__animated animate__fadeIn animate__slower animate__delay-1s">Find your next adventure!</h4>
+<div class="container-fluid px-0 banner-container text-center text-sm-left">
+    <div class="bookstore-background"></div>
     <div class="col-12 col-md-7 quotes-section">
+        <h1 class="display-4 banner-text-style1 animate__animated animate__fadeIn animate__slower pt-5">Welcome to our online bookstore !!!</h1>
+        <h4 class="display-4 banner-text-style2 animate__animated animate__fadeIn animate__slower animate__delay-1s">Find your next adventure!</h4>
         <blockquote class="quote-text-quote" id="quote"></blockquote>
-        <p class="quote-text-author" id="quote_author"></p>
-        <p class="quote-text-tags" id="quote_tags"></p>
+        <div class="quotes-section">
+            <p class="quote-text-author" id="quote_author"></p>
+            <a class="quote-text-tags text-light badge-pill badge-secondary font-weight-lighter text-center" id="quote_tags"></a>
+        </div>
     </div>
 </div>
 
 
 <!-- All Books Section -->
 <div class="container-fluid">
-    <h2>All Books</h2>
-    <h6><em>List of all books</em></h6>
+    <h2 class="text-center mt-5">All Books</h2>
+    <h6 class="text-center"><em>List of all books</em></h6>
     <div class="row pb-5">
         @foreach (var book in Model.AllBooksList)
         {
