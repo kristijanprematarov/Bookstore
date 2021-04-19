@@ -1,5 +1,6 @@
 ﻿using Bookstore.Data;
 using Bookstore.Entities;
+using Bookstore.Entities.API.Models;
 using Bookstore.Entities.Logger;
 using Bookstore.Entities.Quotes;
 using Bookstore.Repository.Interfaces;
@@ -68,6 +69,26 @@ namespace Bookstore.Repository
         {
             var allBooks = _dataContext.Books.AsEnumerable();
             return allBooks;
+        }
+
+        public IEnumerable<BookApiDTO> GetAllBooksAPI()
+        {
+            var bookList = new List<BookApiDTO>();
+            var result = _dataContext.Books.AsEnumerable();
+
+            foreach (var book in result)
+            {
+                var bookDTO = new BookApiDTO()
+                {
+                    Title = book.Title,
+                    Author = book.AuthorName,
+                    Publisher = book.PublisherName
+                };
+
+                bookList.Add(bookDTO);
+            }
+
+            return bookList.AsEnumerable();
         }
 
         public IEnumerable<Book> GetAllBooksWithFullRelationalData()

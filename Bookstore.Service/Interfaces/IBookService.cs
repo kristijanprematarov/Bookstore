@@ -1,4 +1,5 @@
 ﻿using Bookstore.Entities;
+using Bookstore.Entities.API.Models;
 using Bookstore.Entities.Quotes;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -21,6 +22,8 @@ namespace Bookstore.Service.Interfaces
         Book GetBookById(int id);
 
         IEnumerable<Book> GetAllBooks();
+
+        IEnumerable<BookApiDTO> GetAllBooksAPI();
 
         IEnumerable<Book> GetAllBooksWithFullRelationalData();
 

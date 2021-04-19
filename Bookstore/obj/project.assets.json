@@ -3263,6 +3263,19 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Bookstore.API/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Bookstore.API.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Bookstore.API.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Bookstore.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -3278,10 +3291,7 @@
         },
         "runtime": {
           "bin/placeholder/Bookstore.Data.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Bookstore.Entities/1.0.0": {
         "type": "project",
@@ -3294,10 +3304,7 @@
         },
         "runtime": {
           "bin/placeholder/Bookstore.Entities.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Bookstore.Repository/1.0.0": {
         "type": "project",
@@ -3311,10 +3318,7 @@
         },
         "runtime": {
           "bin/placeholder/Bookstore.Repository.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Bookstore.Service/1.0.0": {
         "type": "project",
@@ -3329,10 +3333,7 @@
         },
         "runtime": {
           "bin/placeholder/Bookstore.Service.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -10112,6 +10113,11 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Bookstore.API/1.0.0": {
+      "type": "project",
+      "path": "../Bookstore.API/Bookstore.API.csproj",
+      "msbuildProject": "../Bookstore.API/Bookstore.API.csproj"
+    },
     "Bookstore.Data/1.0.0": {
       "type": "project",
       "path": "../Bookstore.Data/Bookstore.Data.csproj",
@@ -10135,6 +10141,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Bookstore.API >= 1.0.0",
       "Bookstore.Data >= 1.0.0",
       "Bookstore.Repository >= 1.0.0",
       "Bookstore.Service >= 1.0.0",
@@ -10149,7 +10156,8 @@
   },
   "packageFolders": {
     "C:\\Users\\Kristijan\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10161,10 +10169,12 @@
       "outputPath": "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\Kristijan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -10179,6 +10189,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.API\\Bookstore.API.csproj": {
+              "projectPath": "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.API\\Bookstore.API.csproj"
+            },
             "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.Data\\Bookstore.Data.csproj": {
               "projectPath": "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.Data\\Bookstore.Data.csproj"
             },
@@ -10250,7 +10263,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
