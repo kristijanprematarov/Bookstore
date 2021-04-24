@@ -1,7 +1,13 @@
+using Bookstore.Data;
+using Bookstore.Repository;
+using Bookstore.Repository.Interfaces;
+using Bookstore.Service;
+using Bookstore.Service.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +32,18 @@ namespace Bookstore.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //resolve DataContext
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("BookstoreConnection")));
+
+            //resolve repositories
+            services.AddTransient<IBookRepository, BookRepository>();
+
+            //resolve services
+            services.AddTransient<IBookService, BookService>();
+
+            //CORS
+            services.AddCors(policy => policy.AddPolicy("BookstoreCorsPolicy", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +53,8 @@ namespace Bookstore.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("BookstoreCorsPolicy");
 
             app.UseHttpsRedirection();
 

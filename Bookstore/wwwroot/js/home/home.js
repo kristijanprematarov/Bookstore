@@ -19,12 +19,10 @@ $(document).ready(function () {
 
     GetQuotes();
 
-    setInterval(GetQuotes, 15000);
+    /*GetRandomBook();*/
 
-    //setInterval(() => {
-    //    GetQuotes();
-    //    15000;
-    //});
+    setInterval(GetQuotes, 15000);
+    /*setInterval(GetRandomBook, 5000)*/
 
 });
 
@@ -52,4 +50,17 @@ function GetQuotes() {
             alert("Error getting quotes");
         }
     })
+};
+
+function GetRandomBook() {
+    $.ajax({
+        type: "GET",
+        url: "https://localhost:7001/api/book/randombook",
+        success: function (data) {
+            console.log(data);
+        },
+        error: function () {
+            alert("Error getting random book !");
+        }
+    });
 };

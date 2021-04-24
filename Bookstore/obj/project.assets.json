@@ -3266,6 +3266,10 @@
       "Bookstore.API/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Bookstore.Repository": "1.0.0",
+          "Bookstore.Service": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Bookstore.API.dll": {}
         },

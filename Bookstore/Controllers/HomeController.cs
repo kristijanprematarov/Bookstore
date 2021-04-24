@@ -31,7 +31,7 @@ namespace Bookstore.Controllers
 
             var homeViewModel = new HomeViewModel()
             {
-                AllBooksList = books
+                AllBooksList = booksWithFullData
             };
 
             return View(homeViewModel);

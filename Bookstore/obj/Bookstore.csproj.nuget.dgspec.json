@@ -33,7 +33,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.Repository\\Bookstore.Repository.csproj": {
+                "projectPath": "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.Repository\\Bookstore.Repository.csproj"
+              },
+              "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.Service\\Bookstore.Service.csproj": {
+                "projectPath": "C:\\Users\\Kristijan\\source\\repos\\Bookstore\\Bookstore.Service\\Bookstore.Service.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

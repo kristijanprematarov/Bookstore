@@ -32,6 +32,59 @@
     </div>
 </div>
 
+<div class="container-fluid">
+
+    <h2 class="text-center mt-5 animate__animated animate__heartBeat animate__slower">Books by our most popular author for this month !</h2>
+    @foreach (var book in Model.AllBooksList)
+    {
+        @if (book.Author.Popularity)
+        {
+            <h2 class="text-center text-success mt-5 animate__animated animate__fadeIn animate__slower"><i class="fas fa-book-reader"></i> @Html.DisplayFor(modelItem => book.AuthorName)</h2>
+            break;
+        }
+    }
+    <div class="row pb-5">
+        @foreach (var book in Model.AllBooksList)
+        {
+            if (book.Author.Popularity)
+            {
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mt-5">
+                    <div class="card h-100 mx-auto" style="max-width: 350px;">
+                        <div class="image">
+                            <img src="~/photos/@book.PhotoURL" alt="Alternate Text" class="card-img-top" style="height:450px" />
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center d-flex flex-column justify-content-center" style="height:120px">
+                                <h5 class="card-title w-100"><a class="text-dark" href="/Book/Details/@book.Id">@Html.DisplayFor(modelItem => book.Title)</a></h5>
+                                <h6 class=""><em>by <a class="text-dark" href="/Author/Details/@book.AuthorID">@Html.DisplayFor(modelItem => book.AuthorName)</a></em></h6>
+                            </div>
+                            <hr />
+                            <p class="card-text">Category: @Html.DisplayFor(modelItem => book.CategoryName)</p>
+                            <p class="card-text">Genre: @Html.DisplayFor(modelItem => book.Genre)</p>
+                            <p class="card-text">Book Rating: @Html.DisplayFor(modelItem => book.Rating)/5.0</p>
+                            @if (ViewContext.HttpContext.User.IsInRole("guest") || ViewContext.HttpContext.User.IsInRole("editor") || ViewContext.HttpContext.User.IsInRole("admin"))
+                            {
+                                <button class="btn btn-secondary btn-block"><i class="fas fa-plus-circle"></i> Add to Wishlist</button>
+                                <button class="btn btn-success btn-block"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                            }
+                            else
+                            {
+                                <a class="btn btn-secondary btn-block text-light text-decoration-none" asp-area="Identity" asp-page="/Account/Login"><i class="fas fa-plus-circle"></i> Add to Wishlist</a>
+
+                                <a class="btn btn-success btn-block text-light text-decoration-none" asp-area="Identity" asp-page="/Account/Login"><i class="fas fa-cart-plus"></i> Add to Cart</a>
+                            }
+                        </div>
+                        <div class="price text-center">
+                            <p class="w-75 mx-auto card-text bg-light text-success font-weight-bold rounded-pill animate__animated animate__heartBeat animate__infinite animate__faster">@Html.DisplayFor(modelItem => book.Price)&euro;</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+
 
 <!-- All Books Section -->
 <div class="container-fluid">

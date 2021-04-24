@@ -1,4 +1,6 @@
 ﻿
+// ********************************************************* BOOK CREATE *********************************************************
+
 $(function () {
 
     $("form[name='bookcreate']").validate({
@@ -176,6 +178,156 @@ $(function () {
             },
             Rating: {
                 required: "Please enter the rating of the book",
+            }
+        },
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+
+});
+
+// ********************************************************* CATEGORY *********************************************************
+
+$(function () {
+
+    $("form[name='categorycreate']").validate({
+        success: "valid",
+        onkeyup: true,
+        focusInvalid: true,
+        errorClass: "error",
+        highlight: function (element, errorClass) {
+            $(element).fadeOut(function () {
+                $(element).fadeIn();
+                $(element).addClass(errorClass);
+            });
+        },
+        rules: { 
+            Name: {
+                required: true,
+                minlength: 2 
+            }
+        },
+        messages: { // SPECIFY VALIDATION ERROR MESSAGES
+            Name: {
+                required: "Please enter category name",
+                minlength: jQuery.validator.format("At least {0} characters required")
+            }
+        },
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+
+});
+
+// ********************************************************* AUTHOR *********************************************************
+
+$(function () {
+
+    $("form[name='authorcreate']").validate({
+        success: "valid",
+        onkeyup: true,
+        focusInvalid: true,
+        errorClass: "error",
+        highlight: function (element, errorClass) {
+            $(element).fadeOut(function () {
+                $(element).fadeIn();
+                $(element).addClass(errorClass);
+            });
+        },
+        rules: {
+            Name: {
+                required: true,
+                minlength: 2
+            },
+            Country: {
+                required: true,
+                minlength: 2
+            },
+            DateBirth: {
+                required: true
+            },
+            ShortDescription: {
+                required: true,
+                minlength: 2
+            },
+            Language: {
+                required: true
+            },
+            Gender: {
+                required: true
+            }
+        },
+        messages: { // SPECIFY VALIDATION ERROR MESSAGES
+            Name: {
+                required: "Please enter the name of the Author",
+                minlength: jQuery.validator.format("At least {0} characters required")
+            },
+            Country: {
+                required: "Please enter country",
+                minlength: jQuery.validator.format("At least {0} characters required")
+            },
+            DateBirth: {
+                required: "Please choose the date of birth",
+            },
+            ShortDescription: {
+                required: "Please write a shord description",
+                minlength: jQuery.validator.format("At least {0} characters required")
+            },
+            Language: {
+                required: "Please enter language",
+            },
+            Gender: {
+                required: "Please enter gender",
+            }
+        },
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+
+});
+
+// ********************************************************* PUBLISHER *********************************************************
+
+$(function () {
+
+    $("form[name='publishercreate']").validate({
+        success: "valid",
+        onkeyup: true,
+        focusInvalid: true,
+        errorClass: "error",
+        highlight: function (element, errorClass) {
+            $(element).fadeOut(function () {
+                $(element).fadeIn();
+                $(element).addClass(errorClass);
+            });
+        },
+        rules: {
+            Name: {
+                required: true,
+                minlength: 2
+            },
+            Country: {
+                required: true,
+                minlength: 2
+            },
+            Year: {
+                required: true
+            }
+        },
+        messages: { // SPECIFY VALIDATION ERROR MESSAGES
+            Name: {
+                required: "Please enter the name of the Publisher",
+                minlength: jQuery.validator.format("At least {0} characters required")
+            },
+            Country: {
+                required: "Please enter country",
+                minlength: jQuery.validator.format("At least {0} characters required")
+            },
+            Year: {
+                required: "Please choose the date of birth",
             }
         },
         submitHandler: function (form) {
